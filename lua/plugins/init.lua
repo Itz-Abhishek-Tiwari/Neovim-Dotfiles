@@ -16,30 +16,30 @@ return {
     end,
   },
 
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "lua-language-server",
-  --       "stylua",
-  --       "html-lsp",
-  --       "css-lsp",
-  --       "prettier",
-  --       "sqls",
-  --       "tailwindcss-language-server",
-  --       "typescript-language-server",
-  --       "eslint-lsp",
-  --       "pyright",
-  --       -- "mypy",
-  --       "debugpy",
-  --       "ruff-lsp",
-  --       "black",
-  --       "pylint",
-  --       "bash-language-server",
-  --
-  --     },
-  --   },
-  -- },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "html-lsp",
+        "css-lsp",
+        "prettier",
+        "sqls",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+        "eslint-lsp",
+        "pyright",
+        -- "mypy",
+        "debugpy",
+        "ruff-lsp",
+        "black",
+        "pylint",
+        "bash-language-server",
+
+      },
+    },
+  },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -74,17 +74,13 @@ return {
       return require "configs.null-ls"
     end,
   },
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    name = "render-markdown",            -- Only needed if you have another plugin named markdown.nvim
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter", -- Mandatory
-      "nvim-tree/nvim-web-devicons",     -- Optional but recommended
-    },
-    config = function()
-      require("render-markdown").setup {}
-    end,
-  },
+{
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+},
   {
     "michaelrommel/nvim-silicon",
     lazy = true,
