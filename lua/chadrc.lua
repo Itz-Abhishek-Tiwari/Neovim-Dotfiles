@@ -27,8 +27,11 @@ M.ui = {
 }
 
 
-vim.cmd([[
-  autocmd BufNewFile,BufRead *.html set filetype=htmldjango
-]])
 
+-- vim.cmd([[
+--   augroup FileTypeDjango
+--     autocmd!
+--     autocmd BufNewFile,BufRead *.html set filetype=htmldjango
+--   augroup END
+-- ]])
 return M

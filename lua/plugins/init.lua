@@ -61,7 +61,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html" },
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html", },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -84,26 +84,28 @@ return {
     cmd = "Silicon",
     config = function()
       require("silicon").setup {
-        font = "Maple Mono SC NF=15;Noto Color Emoji=15",
-        theme = "Coldark-Dark",
-        background = "#579e79",
-        output = "~/Pictures/Screenshots/",
+        font         = "JetBrainsMono NFM=15;Noto Color Emoji=15",
+        theme        = "gruvbox-dark",
+        to_clipboard = true,
+        background   = "#8D6479",
+        output       = "~/Pictures/Screenshots/code.png",
+
         window_title = function()
           return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
         end,
       }
     end,
   },
-  {
-    "tweekmonster/django-plus.vim",
-    ft = { "htmldjango", "python" },
-    config = function()
-      -- Plugin specific configuration
-    end,
-    cond = function()
-      return vim.fn.filereadable(vim.fn.getcwd() .. "/manage.py") == 1
-    end,
-  },
+  -- {
+  --   "tweekmonster/django-plus.vim",
+  --   ft = { "htmldjango", "python" },
+  --   config = function()
+  --     -- Plugin specific configuration
+  --   end,
+  --   cond = function()
+  --     return vim.fn.filereadable(vim.fn.getcwd() .. "/manage.py") == 1
+  --   end,
+  -- },
   -- lua/configs/lazy.lua
   -- other plugins
   -- {

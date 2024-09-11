@@ -79,9 +79,19 @@ if hardmode then
   -- vim.api.nvim_set_keymap('n', '<BS>', msg, { noremap = true, silent = false })
 end
 
+-- html python venv
+-- Function to check if we're in a Python virtual environment
+local function in_virtual_env()
+  local venv = os.getenv("VIRTUAL_ENV")
+  return venv ~= nil
+end
 
---- Vim venv
-
-
-
-
+-- Conditional autocommand based on virtual environment
+if in_virtual_env() then
+  vim.cmd([[
+    augroup FileTypeDjango
+      autocmd!
+      autocmd BufNewFile,BufRead *.html set filetype=htmldjango
+    augroup END
+  ]])
+end

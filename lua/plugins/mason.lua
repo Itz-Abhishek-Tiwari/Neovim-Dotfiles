@@ -5,6 +5,8 @@ return {
     opts = {
       ensure_installed = {
         ensure_installed = {
+          "emmet-language-server",
+          -- 'emmet-ls',
           "lua-language-server",
           "stylua",
           "html-lsp",
