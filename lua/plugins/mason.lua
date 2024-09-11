@@ -24,6 +24,7 @@ return {
           "bash-language-server",
           "jinja-lsp",
           "emmet-language-server",
+          "json-lsp",
         },
       },
     }
