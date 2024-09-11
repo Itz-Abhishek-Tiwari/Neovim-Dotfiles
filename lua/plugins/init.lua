@@ -16,31 +16,31 @@ return {
     end,
   },
 
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
-        "sqls",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "eslint-lsp",
-        "pyright",
-        -- "mypy",
-        "debugpy",
-        "ruff-lsp",
-        "black",
-        "pylint",
-        "bash-language-server",
-
-      },
-    },
-  },
-
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "lua-language-server",
+  --       "stylua",
+  --       "html-lsp",
+  --       "css-lsp",
+  --       "prettier",
+  --       "sqls",
+  --       "tailwindcss-language-server",
+  --       "typescript-language-server",
+  --       "eslint-lsp",
+  --       "pyright",
+  --       -- "mypy",
+  --       "debugpy",
+  --       "ruff-lsp",
+  --       "black",
+  --       "pylint",
+  --       "bash-language-server",
+  --       "jinja2",
+  --     },
+  --   },
+  -- },
+  --
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -52,6 +52,10 @@ return {
         "css",
         "javascript",
         "htmldjango",
+      },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "html" },
       },
     },
   },
@@ -74,13 +78,6 @@ return {
       return require "configs.null-ls"
     end,
   },
-{
-    'MeanderingProgrammer/render-markdown.nvim',
-    opts = {},
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-},
   {
     "michaelrommel/nvim-silicon",
     lazy = true,
@@ -90,7 +87,7 @@ return {
         font = "Maple Mono SC NF=15;Noto Color Emoji=15",
         theme = "Coldark-Dark",
         background = "#579e79",
-        -- output = "~/Pictures/Screenshots/",
+        output = "~/Pictures/Screenshots/",
         window_title = function()
           return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
         end,
@@ -192,11 +189,5 @@ return {
     keys = {
       { ",v", "<cmd>VenvSelect<cr>" },
     },
-  },
-  {
-    "olrtg/nvim-emmet",
-    config = function()
-      vim.keymap.set({ "n", "v" }, '<leader>nq', require('nvim-emmet').wrap_with_abbreviation)
-    end,
   },
 }

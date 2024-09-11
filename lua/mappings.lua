@@ -28,3 +28,12 @@ end, { desc = "DAP Debug last Go test" })
 map("n", "<leader>dpt", function()
   require("dap-python").test_method()
 end, { desc = "DAP Debug Python test" })
+
+
+
+
+-- Noice nvim
+-- Keybinding to clear Noice messages using NoiceDismiss
+
+
+map("n", "<leader>cn", "<cmd> NoiceDismiss<CR>", {desc = "Dismiss Noice Message"})

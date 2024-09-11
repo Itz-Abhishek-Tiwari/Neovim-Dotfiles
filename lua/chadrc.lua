@@ -15,14 +15,20 @@ M.base46 = {
 
 M.ui = {
   tabufline = {
-    order = { "treeOffset", "buffers", "tabs" },
+    order = { "treeOffset", "buffers", "tabs", "btns" },
   },
+
+  telescope = { style = "bordered" },
+
   statusline = {
     theme = "minimal",
     separator_style = "arrow",
   }
 }
 
+
+vim.cmd([[
+  autocmd BufNewFile,BufRead *.html set filetype=htmldjango
+]])
+
 return M
-
-
