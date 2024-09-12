@@ -12,9 +12,9 @@ local opts = {
       end,
     }),
     -- HTML/Django sources
-    null_ls.builtins.formatting.prettier.with({
-      filetypes = { "html", "htmldjango" },
-    }),
+    -- null_ls.builtins.formatting.prettier.with({
+    --   filetypes = { "html", "htmldjango" },
+    -- }),
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
@@ -33,4 +33,3 @@ local opts = {
   end,
 }
 return opts
-
