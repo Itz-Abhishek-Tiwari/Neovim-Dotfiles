@@ -451,11 +451,3 @@ require('render-markdown').setup({
 vim.o.completeopt = "menuone,noselect" -- Recommended completion options
 
 
--- noice
-require("notify").setup({
-  timeout = 5000,
-  render = "wrapped-compact",
-  background_colour = "#000000",
-})
-
-require("telescope").load_extension("noice")

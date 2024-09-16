@@ -4,14 +4,9 @@ local null_ls = require("null-ls")
 local opts = {
   sources = {
     -- Python sources
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.diagnostics.mypy.with({
-      extra_args = function()
-        local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
-        return { "--python-executable", virtual .. "/bin/python3" }
-      end,
-    }),
-    -- HTML/Django sources
+    null_ls.builtins.formatting.black,    -- Python formatting
+
+    -- HTML/Django sources (optional)
     -- null_ls.builtins.formatting.prettier.with({
     --   filetypes = { "html", "htmldjango" },
     -- }),
@@ -32,4 +27,5 @@ local opts = {
     end
   end,
 }
+
 return opts

@@ -1,12 +1,13 @@
--- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
-local servers = { "html", "cssls", "ts_ls", "tailwindcss", "eslint", "pyright", "ruff_lsp", "sqls", "texlab", "json-lsp" }
 
--- lsps with default config
+-- List of servers with default configuration
+local servers = { "html", "cssls", "ts_ls", "tailwindcss", "eslint", "ruff_lsp", "sqls", "texlab" }
+
+-- Setup LSP servers with default configuration
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
@@ -15,51 +16,39 @@ for _, lsp in ipairs(servers) do
   })
 end
 
--- typescript
+-- TypeScript
 lspconfig.ts_ls.setup({
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
 })
 
--- Pyhton
-lspconfig.pyright.setup({
+-- Python
+lspconfig.ruff_lsp.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "python" },
 })
 
-
--- Specific configurations for `html`
+-- HTML
 lspconfig.html.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "html", "htmldjango" },
 })
 
-
+-- Emmet Language Server
 lspconfig.emmet_language_server.setup({
-  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "htmldjango", },
-  -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
-  -- **Note:** only the options listed in the table are supported.
+  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "htmldjango" },
   init_options = {
-    ---@type table<string, string>
     includeLanguages = {},
-    --- @type string[]
     excludeLanguages = {},
-    --- @type string[]
     extensionsPath = {},
-    --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
     preferences = {},
-    --- @type boolean Defaults to `true`
     showAbbreviationSuggestions = true,
-    --- @type "always" | "never" Defaults to `"always"`
     showExpandedAbbreviation = "always",
-    --- @type boolean Defaults to `false`
     showSuggestionsAsSnippets = false,
-    --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
     syntaxProfiles = {},
-    --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
     variables = {},
   },
 })
