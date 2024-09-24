@@ -54,7 +54,8 @@ M.mason = {
     "jinja-lsp",
     "emmet-language-server",
     "json-lsp",
-
+    -- "pyright"
+    "marksman",
   }
 }
 

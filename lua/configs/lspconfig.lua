@@ -5,7 +5,18 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- List of servers with default configuration
-local servers = { "html", "volar", "cssls", "ts_ls", "tailwindcss", "eslint", "ruff_lsp", "sqls", "texlab" }
+local servers = { "html", "volar", "cssls", "ts_ls", "tailwindcss", "eslint", "ruff_lsp", "sqls", "texlab", }
+
+
+
+-- Markdown
+lspconfig.marksman.setup({
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "markdown" },
+})
+
 
 -- Setup LSP servers with default configuration
 for _, lsp in ipairs(servers) do
