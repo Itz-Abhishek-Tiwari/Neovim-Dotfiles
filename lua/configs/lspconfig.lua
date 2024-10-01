@@ -5,7 +5,17 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- List of servers with default configuration
-local servers = { "html", "volar", "cssls", "ts_ls", "tailwindcss", "eslint", "ruff_lsp", "sqls", "texlab", }
+local servers = { "html", "volar", "cssls", "ts_ls", "tailwindcss", "eslint", "sqls", "texlab", "jsonls",
+  "pyright", }
+
+-- Cssls
+lspconfig.cssls.setup({
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "css" },
+})
+
 
 
 
@@ -42,7 +52,7 @@ lspconfig.volar.setup({
 })
 
 -- Python
-lspconfig.ruff_lsp.setup({
+lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "python" },
