@@ -3,7 +3,7 @@ local M = {}
 
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "bearded-arc",
   transparency = true,
 
   hl_override = {
