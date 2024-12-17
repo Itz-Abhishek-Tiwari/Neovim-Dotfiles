@@ -1,0 +1,187 @@
+{
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "window.menuBarVisibility": "toggle",
+  "window.customTitleBarVisibility": "auto",
+  "window.commandCenter": false,
+  // "editor.lineNumbers": "relative",
+  "workbench.layoutControl.enabled": false,
+  "editor.fontFamily": "JetBrainsMono NF Thin",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "files.autoSave": "afterDelay",
+  // IT is for vim
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<Space>", // Define space as the leader key
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<Space>",
+        "f",
+        "z"
+      ],
+      "commands": [
+        "actions.find"
+      ] // Search within the current file
+    },
+    {
+      "before": [
+        "<Space>",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ] // Search for a file in the project
+    },
+    {
+      "before": [
+        "<Tab>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ] // Switch to the next tab (next editor)
+    },
+    {
+      "before": [
+        "<S-Tab>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ] // Switch to the previous tab (previous editor)
+    },
+    {
+      "before": [
+        "<Space>",
+        "f",
+        "m"
+      ], // Format the current file
+      "commands": [
+        "editor.action.formatDocument"
+      ] // Format the current file
+    },
+    {
+      "before": [
+        "<Space>",
+        "x"
+      ], // <Space> is your leader key
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ] // Close the current tab
+    },
+    {
+      "before": [
+        "<Space>",
+        "e"
+      ], // Leader key + e
+      "commands": [
+        "workbench.view.explorer"
+      ] // Focus the file explorer
+    },
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "<Left>"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<Down>"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<Up>"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<Right>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "y"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "y"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "y"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "y"
+      ]
+    },
+    {
+      "before": [
+        "p"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "p"
+      ]
+    }
+  ],
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 60,
+  "workbench.iconTheme": "catppuccin noctis icons",
+  "workbench.productIconTheme": "fluent-icons",
+  "editor.defaultFormatter": "ms-python.python",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.mouseWheelZoom": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "catppuccin-noctis-icons.hidesExplorerArrows": false,
+  // "workbench.editor.showTabs": "single"
+  "explorer.openEditors.visible": 0,
+  "explorer.autoReveal": false,
+  "editor.padding.bottom": 14,
+  "editor.padding.top": 14,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.codeLens": false,
+  "editor.minimap.enabled": false,
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+}
